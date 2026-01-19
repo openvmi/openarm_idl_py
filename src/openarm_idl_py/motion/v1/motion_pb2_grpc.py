@@ -19,12 +19,23 @@ class MotionServiceStub(object):
                 request_serializer=motion_dot_v1_dot_motion__pb2.MoveJRequest.SerializeToString,
                 response_deserializer=motion_dot_v1_dot_motion__pb2.MoveJResponse.FromString,
                 _registered_method=True)
+        self.JogJoint = channel.unary_unary(
+                '/motion.v1.MotionService/JogJoint',
+                request_serializer=motion_dot_v1_dot_motion__pb2.JogJointRequest.SerializeToString,
+                response_deserializer=motion_dot_v1_dot_motion__pb2.JogJointResponse.FromString,
+                _registered_method=True)
 
 
 class MotionServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def MoveJ(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def JogJoint(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -37,6 +48,11 @@ def add_MotionServiceServicer_to_server(servicer, server):
                     servicer.MoveJ,
                     request_deserializer=motion_dot_v1_dot_motion__pb2.MoveJRequest.FromString,
                     response_serializer=motion_dot_v1_dot_motion__pb2.MoveJResponse.SerializeToString,
+            ),
+            'JogJoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.JogJoint,
+                    request_deserializer=motion_dot_v1_dot_motion__pb2.JogJointRequest.FromString,
+                    response_serializer=motion_dot_v1_dot_motion__pb2.JogJointResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,6 +82,33 @@ class MotionService(object):
             '/motion.v1.MotionService/MoveJ',
             motion_dot_v1_dot_motion__pb2.MoveJRequest.SerializeToString,
             motion_dot_v1_dot_motion__pb2.MoveJResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def JogJoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/motion.v1.MotionService/JogJoint',
+            motion_dot_v1_dot_motion__pb2.JogJointRequest.SerializeToString,
+            motion_dot_v1_dot_motion__pb2.JogJointResponse.FromString,
             options,
             channel_credentials,
             insecure,

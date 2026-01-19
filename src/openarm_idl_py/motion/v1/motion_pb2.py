@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16motion/v1/motion.proto\x12\tmotion.v1\"S\n\x0cMoveJRequest\x12\x1a\n\x08velocity\x18\x01 \x01(\x05R\x08velocity\x12\'\n\x0fjoint_positions\x18\x02 \x03(\x05R\x0ejointPositions\"C\n\rMoveJResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2K\n\rMotionService\x12:\n\x05MoveJ\x12\x17.motion.v1.MoveJRequest\x1a\x18.motion.v1.MoveJResponseB\x97\x01\n\rcom.motion.v1B\x0bMotionProtoP\x01Z4github.com/openvmi/openarm_go/gen/motion/v1;motionv1\xa2\x02\x03MXX\xaa\x02\tMotion.V1\xca\x02\tMotion\\V1\xe2\x02\x15Motion\\V1\\GPBMetadata\xea\x02\nMotion::V1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16motion/v1/motion.proto\x12\tmotion.v1\"S\n\x0cMoveJRequest\x12\x1a\n\x08velocity\x18\x01 \x01(\x05R\x08velocity\x12\'\n\x0fjoint_positions\x18\x02 \x03(\x05R\x0ejointPositions\"C\n\rMoveJResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message\"H\n\x0fJogJointRequest\x12\x19\n\x08joint_id\x18\x01 \x01(\x05R\x07jointId\x12\x1a\n\x08velocity\x18\x02 \x01(\x05R\x08velocity\"F\n\x10JogJointResponse\x12\x18\n\x07success\x18\x01 \x01(\x08R\x07success\x12\x18\n\x07message\x18\x02 \x01(\tR\x07message2\x90\x01\n\rMotionService\x12:\n\x05MoveJ\x12\x17.motion.v1.MoveJRequest\x1a\x18.motion.v1.MoveJResponse\x12\x43\n\x08JogJoint\x12\x1a.motion.v1.JogJointRequest\x1a\x1b.motion.v1.JogJointResponseB\x97\x01\n\rcom.motion.v1B\x0bMotionProtoP\x01Z4github.com/openvmi/openarm_go/gen/motion/v1;motionv1\xa2\x02\x03MXX\xaa\x02\tMotion.V1\xca\x02\tMotion\\V1\xe2\x02\x15Motion\\V1\\GPBMetadata\xea\x02\nMotion::V1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +36,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MOVEJREQUEST']._serialized_end=120
   _globals['_MOVEJRESPONSE']._serialized_start=122
   _globals['_MOVEJRESPONSE']._serialized_end=189
-  _globals['_MOTIONSERVICE']._serialized_start=191
-  _globals['_MOTIONSERVICE']._serialized_end=266
+  _globals['_JOGJOINTREQUEST']._serialized_start=191
+  _globals['_JOGJOINTREQUEST']._serialized_end=263
+  _globals['_JOGJOINTRESPONSE']._serialized_start=265
+  _globals['_JOGJOINTRESPONSE']._serialized_end=335
+  _globals['_MOTIONSERVICE']._serialized_start=338
+  _globals['_MOTIONSERVICE']._serialized_end=482
 # @@protoc_insertion_point(module_scope)

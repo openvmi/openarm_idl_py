@@ -21,3 +21,19 @@ class MoveJResponse(_message.Message):
     success: bool
     message: str
     def __init__(self, success: _Optional[bool] = ..., message: _Optional[str] = ...) -> None: ...
+
+class JogJointRequest(_message.Message):
+    __slots__ = ()
+    JOINT_ID_FIELD_NUMBER: _ClassVar[int]
+    VELOCITY_FIELD_NUMBER: _ClassVar[int]
+    joint_id: int
+    velocity: int
+    def __init__(self, joint_id: _Optional[int] = ..., velocity: _Optional[int] = ...) -> None: ...
+
+class JogJointResponse(_message.Message):
+    __slots__ = ()
+    SUCCESS_FIELD_NUMBER: _ClassVar[int]
+    MESSAGE_FIELD_NUMBER: _ClassVar[int]
+    success: bool
+    message: str
+    def __init__(self, success: _Optional[bool] = ..., message: _Optional[str] = ...) -> None: ...
